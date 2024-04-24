@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="d-flex">
+    <%= link_to "Edit this flat", edit_flat_path(@flat), class: "me-3" %>
+    <%= link_to "Delete this flat", flat_path(@flat), data: {turbo_method: :delete} %>
+  </div>
+
+  <h1><%= @flat.name %></h1>
+  <h2><%= @flat.address %></h2>
+  <hr>
+  <p><%= @flat.description %></p>
+  <hr>
+  <p>£<%= @flat.price_per_night %> per night</p>
+  <p><%= @flat.number_of_guests %> max guest<%= "#{@flat.number_of_guests == 1 ? "" : "s"}" %></p>
+  <hr>
+  <br>
+  <%= link_to "All flats", root_path %>
+</div>
